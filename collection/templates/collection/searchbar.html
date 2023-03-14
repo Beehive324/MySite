@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block  content %}
+
+    <h2 class="text center"> Search Results </h2>
+    
+    <hr>
+
+    <div class=="container justify-content-center"></div>
+    <div class="container"></div>
+    
+    {% if products %}
+
+    {% for product in products %}
+
+    
+    <div class="card" style="width: 18rem;">
+        <img src="{{product.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <h5 class="card-subtitle">{{product.artist}}</h5>
+          <p class="card-text">{{product.genre}}</p>
+        </div>
+      </div>
+
+    {% endfor %}
+
+
+    {% else %}
+        <p>No music items available</p>
+    {% endif %}
+      
+      
+{% endblock %}
